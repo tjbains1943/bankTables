@@ -36,6 +36,7 @@ class SearchFilters extends PureComponent {
     this.runFilters();
   }
 
+  // handle checkbox for accounts
   handleAccountBox = type => ({ target: { checked } }) => {
     const { updateAccountFilters, accountFilters } = this.props;
     const newFilters = {
@@ -48,6 +49,7 @@ class SearchFilters extends PureComponent {
     updateAccountFilters(newFilters);
   };
 
+  // handle checkbox for transactions
   handleTransactionBox = type => ({ target: { checked } }) => {
     const { updateTransactionFilters, transactionFilters } = this.props;
     const newFilters = {
@@ -60,6 +62,7 @@ class SearchFilters extends PureComponent {
     updateTransactionFilters(newFilters);
   };
 
+  // run all filters on transactions
   runFilters = () => {
     const { transactionFilters, initialRecords, updateRecords } = this.props;
 
@@ -90,6 +93,7 @@ class SearchFilters extends PureComponent {
     updateRecords(newRecords);
   };
 
+  // change camel case to actual transaction input
   transformAccountKeys = () => {
     const { accountFilters } = this.props;
 
