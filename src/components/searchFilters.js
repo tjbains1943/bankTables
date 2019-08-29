@@ -72,7 +72,7 @@ class SearchFilters extends PureComponent {
 
     let newRecords = initialRecords;
     if (activeFilters.length) {
-      newRecords = initialRecords.filter(record => {
+      newRecords = newRecords.filter(record => {
         if (activeFilters.includes(record.transactionType)) {
           return true;
         }
@@ -80,14 +80,14 @@ class SearchFilters extends PureComponent {
       });
     }
     if (activeAccountFilters.length) {
-      const finalRecords = newRecords.filter(record => {
+      newRecords = newRecords.filter(record => {
         if (activeAccountFilters.includes(record.accountName)) {
           return true;
         }
         return false;
       });
-      updateRecords(finalRecords);
     }
+    updateRecords(newRecords);
   };
 
   transformAccountKeys = () => {

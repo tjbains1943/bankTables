@@ -33,7 +33,11 @@ class StatsModal extends PureComponent {
     isOpen: PropTypes.bool.isRequired,
     handleClose: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired,
-    record: PropTypes.array.isRequired,
+    record: PropTypes.array,
+  };
+
+  static defaultProps = {
+    record: [],
   };
 
   render() {
